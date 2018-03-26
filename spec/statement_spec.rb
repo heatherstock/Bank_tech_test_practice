@@ -5,7 +5,7 @@ describe Statement do
 
   context 'when statement is initialized' do
     it 'should have an empty transaction array' do 
-      expect(statement.transaction).to eq []
+      expect(statement.transactions).to eq []
     end 
   end 
 
