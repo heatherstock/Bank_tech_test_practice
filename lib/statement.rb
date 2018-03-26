@@ -6,6 +6,10 @@ class Statement
     @transactions = []
   end
 
+  def update(transaction)
+    @transactions << transaction
+  end 
+
   def display 
     return @transactions
   end 

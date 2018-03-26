@@ -1,7 +1,8 @@
 require 'statement'
 
 describe Statement do 
-  subject(:statement) { described_class.new}
+  subject(:statement) { described_class.new }
+  let(:transaction) { double 'transaction' }
 
   context 'when statement is initialized' do
     it 'should have an empty transaction array' do 
@@ -14,5 +15,12 @@ describe Statement do
       expect(statement.display).to be_instance_of Array
     end 
   end
+
+  describe '#update' do 
+    it 'pushes to transaction array' do 
+      statement.update(transaction)
+      expect(statement.transactions).to eq [transaction]
+    end 
+  end 
 
 end
