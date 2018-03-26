@@ -6,10 +6,15 @@ describe Account do
   let(:statement) { double('statement') }
 
   context 'when bank is initialized' do 
-    it 'should have a starting balance of zero' do
+    it 'should have a default starting balance of zero' do
       expect(account.balance).to eq 0
     end
+
+    it 'should take an argument to set the starting balance' do
+      expect(non_default_account.balance).to eq 2000
+    end
   end
+
 
   describe '#deposit' do
     it 'increases the account balance' do
