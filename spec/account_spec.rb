@@ -7,7 +7,7 @@ describe Account do
 
   context 'when bank is initialized' do 
     it 'should have a default starting balance of zero' do
-      expect(account.balance).to eq 0
+      expect(account.balance).to eq Account::DEFAULT_BALANCE
     end
 
     it 'should take an argument to set the starting balance' do
