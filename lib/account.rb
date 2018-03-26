@@ -13,6 +13,7 @@ class Account
 
   def deposit(amount)
     @balance += amount
+    statement.update(Transaction.new(amount))
   end 
 
   def withdraw(amount)

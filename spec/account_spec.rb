@@ -4,6 +4,7 @@ describe Account do
   subject(:account) { described_class.new }
   let(:non_default_account) { described_class.new(2000, statement)}
   let(:statement) { double('statement') }
+  let(:transaction) {double('transaction') }
 
   context 'when bank is initialized' do 
     it 'should have a default starting balance of zero' do
@@ -20,6 +21,11 @@ describe Account do
     it 'increases the account balance' do
       expect { account.deposit(1000) }.to change { account.balance }.by 1000
     end
+
+    it 'creates new transaction' do
+      expect(statement).to receive(:update)
+      account.deposit(1000)
+    end 
   end 
 
   describe '#withdraw' do
