@@ -32,6 +32,11 @@ describe Account do
     it 'decreases the account balance' do
       expect { account.withdraw(500) }.to change { account.balance }.by -500
     end 
+
+    it 'creates new transaction' do
+      expect(statement).to receive(:update)
+      non_default_account.withdraw(500)
+    end 
   end 
 
   describe '#display_statement' do 

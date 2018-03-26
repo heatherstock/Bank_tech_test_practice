@@ -19,6 +19,7 @@ class Account
 
   def withdraw(amount)
     @balance -= amount
+    statement.update(Transaction.new(amount))
   end 
 
   def display_statement
