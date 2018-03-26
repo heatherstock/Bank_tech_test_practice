@@ -1,12 +1,12 @@
 class Statement
 
-  attr_reader :transaction
+  attr_reader :transactions
 
   def initialize
-    @transaction = []
+    @transactions = []
   end
 
   def display 
-    return @transaction
+    return @transactions
   end 
 end 
