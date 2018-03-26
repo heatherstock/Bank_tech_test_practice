@@ -24,7 +24,7 @@ describe Account do
 
     it 'creates new transaction' do
       expect(statement).to receive(:update)
-      account.deposit(1000)
+      non_default_account.deposit(1000)
     end 
   end 
 
