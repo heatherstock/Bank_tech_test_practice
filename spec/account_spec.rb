@@ -2,6 +2,8 @@ require 'account'
 
 describe Account do
   subject(:account) { described_class.new }
+  let(:non_default_account) { described_class.new(2000, statement)}
+  let(:statement) { double('statement') }
 
   context 'when bank is initialized' do 
     it 'should have a starting balance of zero' do
@@ -18,6 +20,13 @@ describe Account do
   describe '#withdraw' do
     it 'decreases the account balance' do
       expect { account.withdraw(500) }.to change { account.balance }.by -500
+    end 
+  end 
+
+  describe '#display_statement' do 
+    it 'shows balance and deposit/withdrawal history on the screen' do 
+      expect(statement).to receive(:display)
+      non_default_account.display_statement
     end 
   end 
 end
