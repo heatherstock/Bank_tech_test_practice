@@ -1,4 +1,4 @@
-# require_relative 'transaction'
+require_relative 'transaction'
 
 class Statement
 
@@ -13,6 +13,13 @@ class Statement
   end 
 
   def display 
-    return @transactions
+    puts 'date || credit || debit || balance' 
+    @transactions.each do |transaction|
+      if transaction.type == 'credit' 
+        puts transaction.date + ' || ' + transaction.amount.to_s + ' ||  || ' + transaction.balance.to_s
+      elsif transaction.type == 'debit'
+        puts transaction.date + ' || || ' + transaction.amount.to_s + ' || ' + transaction.balance.to_s
+      end
+    end
   end 
 end 
