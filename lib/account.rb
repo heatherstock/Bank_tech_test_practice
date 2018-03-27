@@ -14,13 +14,15 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    statement.update(Transaction.new(amount.to_s, Time.now, 'credit', @balance.to_s))
-  end 
+    t = Transaction.new(amount.to_s, Time.now, 'credit', @balance.to_s)
+    statement.update(t)
+  end
 
   def withdraw(amount)
     @balance -= amount
-    statement.update(Transaction.new(amount.to_s, Time.now, 'debit', @balance.to_s))
-  end 
+    t = Transaction.new(amount.to_s, Time.now, 'debit', @balance.to_s)
+    statement.update(t)
+  end
 
   def display_statement
     @statement.display

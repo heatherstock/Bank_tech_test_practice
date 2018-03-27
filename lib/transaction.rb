@@ -1,4 +1,4 @@
-class Transaction 
+class Transaction
 
   attr_reader :amount, :date, :type, :balance
 

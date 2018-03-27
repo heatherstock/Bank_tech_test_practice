@@ -10,21 +10,24 @@ class Statement
 
   def update(transaction)
     @transactions << transaction
-  end 
+  end
 
-  def display 
+  def display
     puts 'date || credit || debit || balance'
     collate
-  end 
+  end
 
-private
+  private
+
   def collate
     @transactions.reverse_each do |transaction|
-      if transaction.type == 'credit' 
-        puts transaction.date + ' || ' + transaction.amount + ' ||  || ' + transaction.balance
-      elsif transaction.type == 'debit'
-        puts transaction.date + ' || || ' + transaction.amount + ' || ' + transaction.balance
+      t_date = transaction.date
+      t_amount = transaction.amount
+      t_balance = transaction.balance
+      if transaction.type == 'credit'
+        puts t_date + ' || ' + t_amount + ' ||  || ' + t_balance
+      else puts t_date + ' || || ' + t_amount + ' || ' + t_balance
       end
     end
   end
-end 
+end
