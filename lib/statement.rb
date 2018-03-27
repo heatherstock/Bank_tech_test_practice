@@ -14,11 +14,11 @@ class Statement
 
   def display 
     puts 'date || credit || debit || balance' 
-    @transactions.each do |transaction|
+    @transactions.reverse_each do |transaction|
       if transaction.type == 'credit' 
-        puts transaction.date + ' || ' + transaction.amount.to_s + ' ||  || ' + transaction.balance.to_s
+        puts transaction.date + ' || ' + transaction.amount + ' ||  || ' + transaction.balance
       elsif transaction.type == 'debit'
-        puts transaction.date + ' || || ' + transaction.amount.to_s + ' || ' + transaction.balance.to_s
+        puts transaction.date + ' || || ' + transaction.amount + ' || ' + transaction.balance
       end
     end
   end 

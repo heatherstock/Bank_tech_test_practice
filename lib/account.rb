@@ -3,7 +3,7 @@ require_relative 'transaction'
 
 class Account
 
-  DEFAULT_BALANCE = 0
+  DEFAULT_BALANCE = 0.00
 
   attr_reader :balance, :statement
 
@@ -14,12 +14,12 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    statement.update(Transaction.new(amount, Time.now, 'credit', @balance))
+    statement.update(Transaction.new(amount.to_s, Time.now, 'credit', @balance.to_s))
   end 
 
   def withdraw(amount)
     @balance -= amount
-    statement.update(Transaction.new(amount, Time.now, 'debit', @balance))
+    statement.update(Transaction.new(amount.to_s, Time.now, 'debit', @balance.to_s))
   end 
 
   def display_statement
