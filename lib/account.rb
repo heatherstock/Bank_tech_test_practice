@@ -3,7 +3,7 @@ require_relative 'transaction'
 
 class Account
 
-  DEFAULT_BALANCE = 0.00
+  DEFAULT_BALANCE = 0
 
   attr_reader :balance, :statement
 
