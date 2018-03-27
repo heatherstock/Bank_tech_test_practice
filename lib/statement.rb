@@ -13,7 +13,12 @@ class Statement
   end 
 
   def display 
-    puts 'date || credit || debit || balance' 
+    puts 'date || credit || debit || balance'
+    collate
+  end 
+
+private
+  def collate
     @transactions.reverse_each do |transaction|
       if transaction.type == 'credit' 
         puts transaction.date + ' || ' + transaction.amount + ' ||  || ' + transaction.balance
@@ -21,5 +26,5 @@ class Statement
         puts transaction.date + ' || || ' + transaction.amount + ' || ' + transaction.balance
       end
     end
-  end 
+  end
 end 

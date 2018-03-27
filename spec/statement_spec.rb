@@ -12,10 +12,9 @@ describe Statement do
 
   describe '#display' do 
     it 'returns banking history' do 
-      # this tests nothing at the moment
-      allow(statement).to receive(:display).and_return('date || credit || debit || balance')
-      expect(statement.display).to include 'date || credit || debit || balance'
-    end 
+      expect(STDOUT).to receive(:puts).with('date || credit || debit || balance')
+      statement.display
+    end
   end
 
   describe '#update' do 
