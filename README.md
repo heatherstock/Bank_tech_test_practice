@@ -38,7 +38,7 @@ require './lib/transaction.rb'
 require './lib/statement.rb'
 ```
 The app in action:
-![Alt text](/Users/heatherstock/Dropbox/Projects/tech_test_practice_week/Bank/assets/Screenshot 2018-03-27 16.57.29.png)
+![Alt text](assets/irb_screenshot.png?raw=true)
 
 ## Specification Given 
 
