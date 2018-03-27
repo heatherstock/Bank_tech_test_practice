@@ -4,6 +4,6 @@ class Transaction
 
   def initialize(amount, date)
     @amount = amount
-    @date = date
+    @date = date.strftime('%d/%m/%Y')
   end
 end
